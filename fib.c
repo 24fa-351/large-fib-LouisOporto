@@ -6,19 +6,10 @@ unsigned long long fibIterative(int num);
 
 int main(int argc, char* argv[]) {
     // Set argument as variables
-    int integer = atoi(argv[1]);
+    int N = atoi(argv[1]);
     char type = argv[2][0];
-    char* filename = argv[3];
 
-
-    FILE *fileTxt = fopen(filename, "r");
-    char content[100];
-    fgets(content, 100, fileTxt);
-
-    int number2 = atoi(content);
-    int N = number2 + integer;
-
-    // Resolve the -1 indexing by substracing value
+    // Resolve the -1 indexing by substracting value
     if(type == 'r') {
         printf("%llu\n", fibRecursive(N - 1)); // Recursive call
     }
